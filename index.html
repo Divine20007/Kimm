@@ -45,10 +45,10 @@
       --champagne: #fdf8f5;
     }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+    *, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
     html, body {
       margin: 0;
@@ -247,7 +247,7 @@
 <body class="cosmos-bg min-h-screen text-champagne antialiased selection:bg-rosegold/30 selection:text-gold">
 
   <!-- Ambient Full-Screen Stardust & Lanterns Canvas -->
-  <canvas id="cosmosCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+ <canvas id="cosmosCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-20"></canvas>
 
   <!-- Floating Ambient Music & Keepsake Bar (Visible after Portal Opens) -->
   <header id="topBar" class="fixed top-0 left-0 right-0 z-40 px-4 py-3 sm:px-8 flex items-center justify-between opacity-0 pointer-events-none transition-opacity duration-700">
@@ -455,7 +455,7 @@
 
           <div id="letterBody" class="space-y-5 text-base sm:text-lg text-champagne/90 font-light leading-relaxed">
             <p class="letter-line">
-              Happy Birthday, baby Kim. Today isn’t just another date on the calendar, it’s the anniversary of the day the world quietly became a softer, warmer, and far more extraordinary place because you arrived in it.
+              Happy Birthday, sweet Kim. Today isn’t just another date on the calendar, it’s the anniversary of the day the world quietly became a softer, warmer, and far more extraordinary place because you arrived in it.
             </p>
             <p class="letter-line">
               There is something effortlessly magnetic about your soul. It’s in the genuine warmth of your voice, the way you care deeply without ever making a show of it, and the effortless ease that comes whenever I’m talking to you. Even across distance and busy days, your presence feels like a calm harbour.
@@ -668,7 +668,7 @@
           label: 'Your Warmth',
           title: 'The Effortless Warmth of Your Heart',
           message:
-            'You have a rare, unforced kindness that makes people feel safe the moment they talk to you. You never have to try to be magnetic—your sincerity does all the work.'
+            'You have a rare, unforced kindness that makes people feel safe the moment they talk to you. You never have to try to be magnetic. Your sincerity does all the work.'
         },
         {
           id: 1,
@@ -698,7 +698,7 @@
           label: 'Our Ease',
           title: 'How Natural Everything Feels With You',
           message:
-            'With you, there is never any pretending or second-guessing. Talking to you feels like breathing fresh air—easy, real, and something I always look forward to.'
+            'With you, there is never any pretending or second-guessing. Talking to you feels like breathing fresh air. Easy, real, and something I always look forward to.'
         },
         {
           id: 4,
@@ -708,7 +708,7 @@
           label: 'Your Soul',
           title: 'A Beauty That Goes Far Deeper Than Eyes Can See',
           message:
-            'You are stunning on the outside, Kim, effortlessly so—but it’s the beauty of your character, your loyalty, and your heart that makes you truly unforgettable.'
+            'You are stunning on the outside, Kim, effortlessly so. But it’s the beauty of your character, your loyalty, and your heart that makes you truly unforgettable.'
         },
         {
           id: 5,
@@ -738,7 +738,7 @@
           title: 'Open at midnight on your birthday',
           preview: 'For the very first quiet moments of your new year…',
           body:
-            'Happy Birthday, baby Kim. As the clock turns and your new year officially begins, I want you to know that out of everyone in the world, you are the person I’m most grateful to celebrate today. Take a deep breath, this year is going to treat you with the kindness you deserve.'
+            'Happy Birthday, sweetie. As the clock turns and your new year officially begins, I want you to know that out of everyone in the world, you are the person I’m most grateful to celebrate today. Take a deep breath, this year is going to treat you with the kindness you deserve.'
         },
         {
           tag: 'Capsule 02 • Distance',
@@ -908,10 +908,11 @@
        * 3. AMBIENT CANVAS: STARDUST, SHOOTING STARS, LANTERNS & HEARTS
        * ------------------------------------------------------------------- */
       const canvas = document.getElementById('cosmosCanvas');
-      const ctx = canvas.getContext('2d');
-      let width = 0;
-      let height = 0;
-      let pointer = { x: -9999, y: -9999 };
+   const ctx = canvas.getContext('2d');
+   let width = window.innerWidth;
+   let height = window.innerHeight;
+   let pointer = { x: -9999, y: -9999 };
+   resizeCanvas();
 
       const stardust = [];
       const shootingStars = [];
@@ -1107,10 +1108,14 @@
             ctx.fill();
 
             // Lantern core
+            // Lantern core (compatible with older iOS Safari)
             ctx.fillStyle = '#ffdf9e';
-            ctx.beginPath();
-            ctx.roundRect(l.x - l.size * 0.42, l.y - l.size * 0.55, l.size * 0.84, l.size * 1.1, 4);
-            ctx.fill();
+            ctx.fillRect(
+              l.x - l.size * 0.42,
+              l.y - l.size * 0.55,
+              l.size * 0.84,
+              l.size * 1.1
+            );
             ctx.restore();
           }
         }
