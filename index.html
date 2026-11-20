@@ -975,8 +975,12 @@
         }
       }
 
-      function launchLanterns(count = 14) {
-        for (let i = 0; i < count; i++) {
+     function launchLanterns(count = 14) {
+        const maxLanterns = 45;
+        const availableSlots = Math.max(0, maxLanterns - floatingLanterns.length);
+        const spawnCount = Math.min(count, availableSlots);
+
+        for (let i = 0; i < spawnCount; i++) {
           floatingLanterns.push({
             x: Math.random() * width,
             y: height + Math.random() * 160 + 20,
@@ -1013,6 +1017,10 @@
         // Occasional shooting star
         if (Math.random() < 0.0045 && shootingStars.length < 2) {
           spawnShootingStar();
+        }
+        // Gentle ambient lanterns & hearts (less frequent than tapping the button)
+        if (Math.random() < 0.012 && floatingLanterns.length < 10) {
+          launchLanterns(1);
         }
 
         // 1. Stardust
@@ -1468,9 +1476,10 @@
         initStardust();
       });
 
-      window.onload = function () {
+     window.onload = function () {
         resizeCanvas();
         initStardust();
+        launchLanterns(4);
         animateCosmos();
       };
     })();
