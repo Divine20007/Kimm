@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday, Kim — A Starlight Keepsake</title>
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#09070f',
+            plum: '#140d1f',
+            velvet: '#1c122b',
+            rosegold: '#e8b4a2',
+            champagne: '#fdf8f5',
+            gold: '#f5d08a',
+            crimson: '#8c1d2f',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            hand: ['"Caveat"', 'cursive'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --midnight: #09070f;
+      --plum: #160e24;
+      --gold: #f5d08a;
+      --rosegold: #e8b4a2;
+      --champagne: #fdf8f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--midnight);
+      color: var(--champagne);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Gradient */
+    .cosmos-bg {
+      background:
+        radial-gradient(ellipse at 20% 15%, rgba(114, 54, 92, 0.24) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 35%, rgba(212, 163, 115, 0.14) 0%, transparent 48%),
+        radial-gradient(ellipse at 50% 85%, rgba(74, 34, 78, 0.28) 0%, transparent 55%),
+        linear-gradient(180deg, #09070f 0%, #110b1c 45%, #160d22 75%, #09070f 100%);
+    }
+
+    /* Glassmorphism Cards */
+    .glass-luxury {
+      background: linear-gradient(145deg, rgba(255, 248, 245, 0.065) 0%, rgba(255, 248, 245, 0.02) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(245, 208, 138, 0.18);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-hover {
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, box-shadow 0.45s ease;
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(245, 208, 138, 0.45);
+      box-shadow: 0 28px 65px rgba(232, 180, 162, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    /* Gold Shimmer Text */
+    .text-gold-shimmer {
+      background: linear-gradient(120deg, #fdf8f5 10%, #f5d08a 38%, #e8b4a2 62%, #fdf8f5 90%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerText 7s ease-in-out infinite;
+    }
+
+    @keyframes shimmerText {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Realistic Red & Gold Wax Seal */
+    .wax-seal {
+      background: radial-gradient(circle at 32% 28%, #b92b42 0%, #8a1629 55%, #570a17 100%);
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.65),
+        0 0 24px rgba(212, 65, 89, 0.38),
+        inset 0 2px 5px rgba(255, 195, 200, 0.4),
+        inset 0 -4px 8px rgba(40, 2, 10, 0.8);
+      border: 2px solid rgba(245, 208, 138, 0.45);
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    }
+    .wax-seal::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 9999px;
+      border: 1px dashed rgba(245, 208, 138, 0.55);
+      pointer-events: none;
+    }
+    .wax-seal:hover {
+      transform: scale(1.07) rotate(-3deg);
+      box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.75),
+        0 0 34px rgba(245, 208, 138, 0.45),
+        inset 0 2px 6px rgba(255, 215, 220, 0.5);
+    }
+    .wax-seal:active {
+      transform: scale(0.96);
+    }
+
+    /* Floating Animation */
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
+    }
+    .animate-float {
+      animation: gentleFloat 5.5s ease-in-out infinite;
+    }
+
+    /* Pulse Ring */
+    @keyframes pulseHalo {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      70% { transform: scale(1.38); opacity: 0; }
+      100% { transform: scale(1.38); opacity: 0; }
+    }
+    .star-halo::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 9999px;
+      border: 1.5px solid rgba(245, 208, 138, 0.65);
+      animation: pulseHalo 2.6s infinite;
+    }
+
+    /* Candle Flame Animation */
+    @keyframes flickerFlame {
+      0%, 100% { transform: translateX(-50%) scale(1, 1) rotate(-1deg); opacity: 0.96; }
+      25% { transform: translateX(-50%) scale(0.94, 1.06) rotate(1.5deg); opacity: 1; }
+      50% { transform: translateX(-50%) scale(1.04, 0.95) rotate(-1.5deg); opacity: 0.92; }
+      75% { transform: translateX(-50%) scale(0.97, 1.04) rotate(1deg); opacity: 0.99; }
+    }
+    .candle-flame {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      width: 14px;
+      height: 24px;
+      background: radial-gradient(ellipse at 50% 75%, #ffffff 0%, #fff099 35%, #ff9d2e 75%, rgba(255, 94, 0, 0) 100%);
+      border-radius: 50% 50% 45% 45% / 65% 65% 35% 35%;
+      box-shadow:
+        0 0 14px #ffcf6e,
+        0 0 28px rgba(255, 179, 71, 0.75),
+        0 0 48px rgba(232, 180, 162, 0.45);
+      transform-origin: bottom center;
+      animation: flickerFlame 1.4s infinite ease-in-out;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .candle-flame.extinguished {
+      opacity: 0 !important;
+      transform: translateX(-50%) scale(0.1) !important;
+      animation: none;
+    }
+
+    /* Smoke Curl Animation */
+    @keyframes smokeRise {
+      0% { opacity: 0; transform: translate(-50%, 0) scale(0.6); }
+      25% { opacity: 0.65; }
+      100% { opacity: 0; transform: translate(-35%, -48px) scale(1.8); }
+    }
+    .candle-smoke {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      width: 10px;
+      height: 22px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(235, 230, 245, 0.55) 0%, transparent 75%);
+      filter: blur(3px);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .candle-smoke.rising {
+      animation: smokeRise 2.2s ease-out forwards;
+    }
+
+    /* Scroll Reveal */
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Letter Paragraph Fade */
+    .letter-line {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .letter-line.shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09070f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(245, 208, 138, 0.28);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(245, 208, 138, 0.5);
+    }
+  </style>
+</head>
+<body class="cosmos-bg min-h-screen text-champagne antialiased selection:bg-rosegold/30 selection:text-gold">
+
+  <!-- Ambient Full-Screen Stardust & Lanterns Canvas -->
+  <canvas id="cosmosCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- Floating Ambient Music & Keepsake Bar (Visible after Portal Opens) -->
+  <header id="topBar" class="fixed top-0 left-0 right-0 z-40 px-4 py-3 sm:px-8 flex items-center justify-between opacity-0 pointer-events-none transition-opacity duration-700">
+    <div class="glass-luxury px-4 py-2 rounded-full flex items-center gap-2.5">
+      <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+      <span class="font-serif italic text-sm sm:text-base tracking-wide text-champagne/90">For My Starlight</span>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <button id="musicToggleBtn" type="button" aria-label="Toggle birthday music box"
+        class="glass-luxury px-3.5 py-2 sm:px-4 rounded-full flex items-center gap-2 text-xs sm:text-sm text-gold hover:border-gold/50 transition cursor-pointer">
+        <span id="musicIcon" class="text-base leading-none">♪</span>
+        <span id="musicLabel" class="font-medium tracking-wide">Music: Off</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- OPENING PORTAL: THE STARLIGHT ENVELOPE GATE                           -->
+  <!-- ===================================================================== -->
+  <section id="portalGate" class="fixed inset-0 z-50 flex items-center justify-center p-5 bg-[#09070f]/95 backdrop-blur-xl transition-all duration-1000">
+    <div class="max-w-lg w-full glass-luxury rounded-3xl p-7 sm:p-11 text-center relative overflow-hidden animate-float">
+      <!-- Subtle Corner Flourishes -->
+      <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-gold/10 blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-16 -right-16 w-44 h-44 rounded-full bg-rosegold/15 blur-2xl pointer-events-none"></div>
+
+      <p class="uppercase tracking-[0.28em] text-[11px] sm:text-xs text-gold/80 mb-3 font-medium">
+        A Private Starlight Keepsake
+      </p>
+
+      <h1 class="font-serif italic text-3xl sm:text-5xl font-semibold text-gold-shimmer leading-tight mb-4">
+        For Kim, On the Day the World Got Brighter
+      </h1>
+
+      <p class="text-sm sm:text-base text-champagne/75 font-light leading-relaxed max-w-md mx-auto mb-8">
+        Before today gets busy, take a quiet breath. Every star in this little universe was placed here just for you, Kim.
+      </p>
+
+      <!-- Wax Seal Button -->
+      <div class="flex flex-col items-center justify-center gap-4">
+        <button id="openUniverseBtn" type="button"
+          class="wax-seal w-24 h-24 sm:w-28 sm:h-28 rounded-full flex flex-col items-center justify-center cursor-pointer group focus:outline-none">
+          <span class="font-serif italic text-2xl sm:text-3xl font-bold text-gold drop-shadow">K</span>
+          <span class="text-[9px] uppercase tracking-[0.2em] text-champagne/85 mt-0.5">Tap Seal</span>
+        </button>
+
+        <button id="openUniverseTextBtn" type="button"
+          class="mt-2 px-6 py-3 rounded-full bg-gradient-to-r from-gold/20 via-rosegold/25 to-gold/20 border border-gold/40 text-champagne text-xs sm:text-sm uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/25 transition cursor-pointer">
+          Open Your Birthday Universe
+        </button>
+      </div>
+
+      <p class="text-[11px] text-champagne/45 mt-6 font-light">
+        Turn your sound up softly for a music-box lullaby
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN EXPERIENCE                                                       -->
+  <!-- ===================================================================== -->
+  <main id="mainExperience" class="relative z-10 opacity-0 transition-opacity duration-1000 pt-24 pb-20 px-4 sm:px-8 max-w-5xl mx-auto space-y-28 sm:space-y-36">
+
+    <!-- HERO HEADER -->
+    <section class="text-center pt-4 sm:pt-10 space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-luxury text-xs tracking-[0.22em] uppercase text-rosegold">
+        <span>✦</span>
+        <span>Happy Birthday, My Baby Kim</span>
+        <span>✦</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-[1.1] text-champagne">
+        The Sky Looks Different <br />
+        <span class="italic text-gold-shimmer font-semibold">Because You Are In It.</span>
+      </h1>
+
+      <p class="max-w-xl mx-auto text-sm sm:text-lg text-champagne/75 font-light leading-relaxed">
+        Some people pass through life like background noise, and then someone like you arrives and quietly changes the entire atmosphere. Today is all about celebrating your heart, your light, and everything you are.
+      </p>
+
+      <div class="pt-2 flex justify-center">
+        <a href="#chapter-constellation" class="inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold/75 hover:text-gold transition">
+          <span>Begin Your Journey</span>
+          <span class="w-px h-8 bg-gradient-to-b from-gold/70 to-transparent"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CHAPTER I: THE CONSTELLATION OF YOU                                 -->
+    <!-- =================================================================== -->
+    <section id="chapter-constellation" class="reveal-section space-y-8">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <p class="text-xs uppercase tracking-[0.28em] text-gold/80">Chapter I</p>
+        <h2 class="font-serif italic text-3xl sm:text-5xl text-champagne">The Constellation of You</h2>
+        <p class="text-sm sm:text-base text-champagne/70 font-light">
+          Tap each glowing star in the night sky to connect the lines and uncover what makes you unforgettable.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <!-- Interactive Star Map -->
+        <div class="lg:col-span-7 glass-luxury rounded-3xl p-4 sm:p-6 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <span id="constellationProgress" class="text-xs uppercase tracking-[0.2em] text-gold/85">
+              0 of 6 Stars Lit
+            </span>
+            <button id="lightAllStarsBtn" type="button"
+              class="text-xs px-3.5 py-1.5 rounded-full bg-gold/15 border border-gold/35 text-gold hover:bg-gold/25 transition cursor-pointer">
+              ✦ Light Every Star
+            </button>
+          </div>
+
+          <!-- Responsive Constellation Stage -->
+          <div id="constellationStage" class="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl bg-[#07050c]/80 border border-white/5 overflow-hidden select-none">
+            <!-- SVG Connecting Lines -->
+            <svg id="constellationLines" viewBox="0 0 100 100" preserveAspectRatio="none" class="absolute inset-0 w-full h-full pointer-events-none">
+              <!-- Lines populated dynamically -->
+            </svg>
+            <!-- Star Buttons populated dynamically -->
+            <div id="constellationNodes" class="absolute inset-0 w-full h-full"></div>
+          </div>
+        </div>
+
+        <!-- Revealed Star Memory Card -->
+        <div class="lg:col-span-5">
+          <div id="starDetailCard" class="glass-luxury rounded-3xl p-7 sm:p-9 min-h-[270px] flex flex-col justify-between transition-all duration-500">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span id="starBadge" class="px-3 py-1 rounded-full text-[11px] uppercase tracking-[0.2em] bg-rosegold/15 text-rosegold border border-rosegold/30">
+                  Starlight Whisper
+                </span>
+                <span id="starRoman" class="font-serif italic text-xl text-gold/70">✦</span>
+              </div>
+
+              <h3 id="starTitle" class="font-serif italic text-2xl sm:text-3xl text-gold mb-3">
+                Touch a Star to Begin
+              </h3>
+
+              <p id="starMessage" class="text-sm sm:text-base text-champagne/80 font-light leading-relaxed">
+                Every star in this heart-shaped constellation holds a truth about you; things you probably don't even realize you do, yet they mean the world.
+              </p>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs text-champagne/50">
+              <span id="starHint">Tap any pulsing star on the map</span>
+              <span class="font-hand text-lg text-rosegold">for Kim</span>
+            </div>
+          </div>
+
+          <!-- Unlocked Full Constellation Secret -->
+          <div id="constellationSecretBanner" class="hidden mt-4 glass-luxury rounded-2xl p-5 border-gold/50 bg-gradient-to-r from-gold/15 via-rosegold/15 to-gold/15 text-center">
+            <p class="font-serif italic text-xl text-gold mb-1">A Complete Heart in the Sky</p>
+            <p class="text-xs sm:text-sm text-champagne/85 font-light leading-relaxed">
+              Every single piece of who you are connects into something rare. Even from afar, you have a way of making life feel softer, warmer, and infinitely brighter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CHAPTER II: A LETTER WRITTEN IN STARLIGHT                           -->
+    <!-- =================================================================== -->
+    <section id="chapter-letter" class="reveal-section space-y-8">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <p class="text-xs uppercase tracking-[0.28em] text-gold/80">Chapter II</p>
+        <h2 class="font-serif italic text-3xl sm:text-5xl text-champagne">A Letter Written in Starlight</h2>
+        <p class="text-sm sm:text-base text-champagne/70 font-light">
+          Break the wax seal to unfold what words barely know how to hold.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <!-- Sealed Envelope View -->
+        <div id="letterClosedState" class="glass-luxury rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden">
+          <div class="max-w-md mx-auto space-y-6">
+            <p class="font-hand text-2xl sm:text-3xl text-rosegold">To: My Baby Kim</p>
+            <div class="h-px w-24 mx-auto bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
+            <p class="font-serif italic text-xl sm:text-2xl text-champagne/90">
+              “Some feelings deserve to be kept somewhere timeless.”
+            </p>
+
+            <div class="pt-3 flex flex-col items-center gap-3">
+              <button id="breakLetterSealBtn" type="button"
+                class="wax-seal w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center cursor-pointer focus:outline-none">
+                <span class="font-serif italic text-2xl font-bold text-gold">♥</span>
+              </button>
+              <span class="text-xs uppercase tracking-[0.24em] text-gold/80">Tap the Wax Seal to Unfold</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opened Parchment-Glass Keepsake Letter -->
+        <div id="letterOpenState" class="hidden glass-luxury rounded-3xl p-7 sm:p-12 md:p-14 relative overflow-hidden border-gold/35">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-rosegold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-between border-b border-gold/20 pb-5 mb-7">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.25em] text-gold/75">Birthday Keepsake Edition</p>
+              <p class="font-hand text-2xl sm:text-3xl text-rosegold mt-1">Dearest Kim,</p>
+            </div>
+            <span class="font-serif italic text-sm text-champagne/55">Written just for you</span>
+          </div>
+
+          <div id="letterBody" class="space-y-5 text-base sm:text-lg text-champagne/90 font-light leading-relaxed">
+            <p class="letter-line">
+              Happy Birthday, baby Kim. Today isn’t just another date on the calendar, it’s the anniversary of the day the world quietly became a softer, warmer, and far more extraordinary place because you arrived in it.
+            </p>
+            <p class="letter-line">
+              There is something effortlessly magnetic about your soul. It’s in the genuine warmth of your voice, the way you care deeply without ever making a show of it, and the effortless ease that comes whenever I’m talking to you. Even across distance and busy days, your presence feels like a calm harbour.
+            </p>
+            <p class="letter-line">
+              You deserve a year where every heavy thing feels lighter, where every quiet prayer you’ve whispered finds its answer, and where you are celebrated with the exact same tenderness and loyalty you give so freely to others.
+            </p>
+            <p class="letter-line">
+              Never forget how rare you are, Kim. No matter where life takes us or how fast the world moves, I’m endlessly grateful to know you, to laugh with you, and to celebrate you today.
+            </p>
+          </div>
+
+          <div class="mt-9 pt-6 border-t border-gold/20 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.22em] text-champagne/55 mb-1">Always cheering for you,</p>
+              <p class="font-hand text-3xl text-gold">Forever in your corner ♥</p>
+            </div>
+
+            <button id="reReadLetterBtn" type="button"
+              class="self-start sm:self-auto px-4 py-2 rounded-full text-xs uppercase tracking-[0.18em] border border-gold/30 text-gold/85 hover:bg-gold/15 transition cursor-pointer">
+              Replay Gentle Reveal
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CHAPTER III: MAKE A BIRTHDAY WISH (INTERACTIVE CAKE & CANDLES)      -->
+    <!-- =================================================================== -->
+    <section id="chapter-wish" class="reveal-section space-y-8">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <p class="text-xs uppercase tracking-[0.28em] text-gold/80">Chapter III</p>
+        <h2 class="font-serif italic text-3xl sm:text-5xl text-champagne">Close Your Eyes & Make a Wish</h2>
+        <p id="wishSubtitle" class="text-sm sm:text-base text-champagne/70 font-light">
+          Think of the one wish closest to your heart this year, then tap the button below to blow out your candles.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto glass-luxury rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+        <!-- Warm Halo Behind Cake -->
+        <div id="cakeAmbientGlow" class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gold/20 blur-3xl transition-opacity duration-1000 pointer-events-none"></div>
+
+        <!-- Luxury Layered Cake Illustration (Pure CSS + SVG) -->
+        <div class="relative mx-auto w-64 sm:w-72 pt-14 pb-4 select-none">
+          <!-- Candles Row -->
+          <div class="flex justify-center items-end gap-6 sm:gap-8 mb-1 relative z-20">
+            <!-- Candle 1 -->
+            <div class="relative flex flex-col items-center">
+              <div class="candle-flame" data-candle="0"></div>
+              <div class="candle-smoke" data-smoke="0"></div>
+              <div class="w-1 h-2.5 bg-amber-900 rounded-full"></div>
+              <div class="w-3 sm:w-3.5 h-12 rounded-t-sm bg-gradient-to-b from-champagne via-rosegold to-amber-200 border-x border-gold/40 shadow-md"></div>
+            </div>
+            <!-- Candle 2 (Center Tallest) -->
+            <div class="relative flex flex-col items-center">
+              <div class="candle-flame" data-candle="1"></div>
+              <div class="candle-smoke" data-smoke="1"></div>
+              <div class="w-1 h-3 bg-amber-900 rounded-full"></div>
+              <div class="w-3.5 sm:w-4 h-14 rounded-t-sm bg-gradient-to-b from-gold via-amber-200 to-rosegold border-x border-gold/50 shadow-md"></div>
+            </div>
+            <!-- Candle 3 -->
+            <div class="relative flex flex-col items-center">
+              <div class="candle-flame" data-candle="2"></div>
+              <div class="candle-smoke" data-smoke="2"></div>
+              <div class="w-1 h-2.5 bg-amber-900 rounded-full"></div>
+              <div class="w-3 sm:w-3.5 h-12 rounded-t-sm bg-gradient-to-b from-champagne via-rosegold to-amber-200 border-x border-gold/40 shadow-md"></div>
+            </div>
+          </div>
+
+          <!-- Top Tier -->
+          <div class="mx-auto w-44 sm:w-48 h-14 rounded-t-2xl bg-gradient-to-b from-[#fdf8f5] to-[#ebd4cb] relative shadow-inner border-t border-white">
+            <!-- Rose-Gold Frosting Drips -->
+            <svg viewBox="0 0 180 28" class="w-full h-6 block">
+              <path d="M0,0 L180,0 L180,10 Q168,24 156,11 Q144,2 132,16 Q120,27 108,12 Q96,3 84,18 Q72,26 60,11 Q48,2 36,15 Q24,25 12,11 Q5,4 0,12 Z" fill="#e8b4a2" opacity="0.85" />
+            </svg>
+            <div class="flex justify-center gap-3 -mt-1">
+              <span class="w-2 h-2 rounded-full bg-gold shadow"></span>
+              <span class="w-2 h-2 rounded-full bg-gold shadow"></span>
+              <span class="w-2 h-2 rounded-full bg-gold shadow"></span>
+            </div>
+          </div>
+
+          <!-- Bottom Tier -->
+          <div class="mx-auto w-56 sm:w-64 h-16 rounded-t-xl rounded-b-lg bg-gradient-to-b from-[#f5e3dc] via-[#e5c2b6] to-[#cfa093] relative shadow-xl border-t border-white/70 flex flex-col justify-between py-2 px-4">
+            <div class="flex justify-between items-center">
+              <span class="w-2 h-2 rounded-full bg-gold/90"></span>
+              <span class="font-serif italic text-xs tracking-widest text-plum/85 font-semibold">BABY KIM</span>
+              <span class="w-2 h-2 rounded-full bg-gold/90"></span>
+            </div>
+            <div class="h-1.5 w-full rounded-full bg-gradient-to-r from-gold/40 via-gold to-gold/40"></div>
+          </div>
+
+          <!-- Luxury Cake Stand -->
+          <div class="mx-auto w-64 sm:w-72 h-2.5 rounded-full bg-gradient-to-r from-gold/40 via-gold to-gold/40 shadow-lg"></div>
+          <div class="mx-auto w-16 h-5 bg-gradient-to-b from-gold/70 to-gold/30"></div>
+          <div class="mx-auto w-32 h-2 rounded-full bg-gold/60"></div>
+        </div>
+
+        <!-- Blow Candles Action / Celebration Blessing -->
+        <div id="cakeActionArea" class="mt-6 space-y-4">
+          <button id="blowCandlesBtn" type="button"
+            class="px-8 py-3.5 rounded-full bg-gradient-to-r from-gold via-[#f7dca4] to-rosegold text-midnight font-semibold text-xs sm:text-sm uppercase tracking-[0.2em] shadow-lg shadow-gold/25 hover:scale-105 active:scale-95 transition cursor-pointer">
+            ✦ Blow Out Your Candles ✦
+          </button>
+        </div>
+
+        <div id="wishBlessingBox" class="hidden mt-6 pt-6 border-t border-gold/25 space-y-3">
+          <p class="font-serif italic text-2xl sm:text-3xl text-gold">
+            May Every Single Wish Find You, Kim.
+          </p>
+          <p class="text-sm sm:text-base text-champagne/85 font-light max-w-md mx-auto leading-relaxed">
+            Look up at the lanterns rising across your screen. Each one carries a blessing for your health, your peace, your dreams, and your happiness this year.
+          </p>
+          <div class="pt-2">
+            <button id="relightCandlesBtn" type="button"
+              class="text-xs uppercase tracking-[0.2em] text-rosegold hover:text-gold underline underline-offset-4 cursor-pointer">
+              Relight Candles & Wish Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CHAPTER IV: "OPEN WHEN..." KEEPSAKE CAPSULES                        -->
+    <!-- =================================================================== -->
+    <section id="chapter-capsules" class="reveal-section space-y-8">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <p class="text-xs uppercase tracking-[0.28em] text-gold/80">Chapter IV</p>
+        <h2 class="font-serif italic text-3xl sm:text-5xl text-champagne">Open When… Capsules</h2>
+        <p class="text-sm sm:text-base text-champagne/70 font-light">
+          Little envelopes sealed for the moments you need them most. Tap any capsule to open it.
+        </p>
+      </div>
+
+      <div id="capsulesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- FOOTER / FOREVER KEEPSAKE                                           -->
+    <!-- =================================================================== -->
+    <footer class="reveal-section pt-8 pb-12 text-center space-y-6 border-t border-white/10">
+      <p class="font-serif italic text-3xl sm:text-4xl text-gold-shimmer">
+        Happy Birthday, Kim. Today and always.
+      </p>
+      <p class="text-xs sm:text-sm text-champagne/60 max-w-md mx-auto font-light leading-relaxed">
+        Keep this link whenever you want a reminder of how deeply appreciated, admired, and cherished you are.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <button id="sendLanternBurstBtn" type="button"
+          class="px-6 py-3 rounded-full glass-luxury border-gold/40 text-gold text-xs uppercase tracking-[0.2em] hover:bg-gold/15 transition cursor-pointer">
+          ♥ Send Sky Lanterns & Hearts
+        </button>
+
+        <button id="replayPortalBtn" type="button"
+          class="px-6 py-3 rounded-full border border-white/15 text-champagne/70 text-xs uppercase tracking-[0.2em] hover:text-champagne hover:border-white/35 transition cursor-pointer">
+          Replay From Beginning
+        </button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL FOR "OPEN WHEN..." CAPSULES                                     -->
+  <!-- ===================================================================== -->
+  <div id="capsuleModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#07050c]/85 backdrop-blur-md">
+    <div class="max-w-lg w-full glass-luxury rounded-3xl p-7 sm:p-10 relative border-gold/40 shadow-2xl transform transition-all">
+      <button id="closeCapsuleModalBtn" type="button" aria-label="Close note"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-champagne/75 hover:text-gold hover:border-gold/40 transition cursor-pointer">
+        ✕
+      </button>
+
+      <p id="modalCapsuleTag" class="text-[11px] uppercase tracking-[0.25em] text-rosegold mb-2">
+        Keepsake Note
+      </p>
+      <h3 id="modalCapsuleTitle" class="font-serif italic text-2xl sm:text-3xl text-gold mb-4">
+        Open When...
+      </h3>
+      <div class="h-px w-16 bg-gold/35 mb-5"></div>
+      <p id="modalCapsuleBody" class="text-base sm:text-lg text-champagne/90 font-light leading-relaxed mb-7">
+        ...
+      </p>
+      <p class="font-hand text-2xl text-rosegold text-right">
+        — Always yours in spirit ♥
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE ENGINE (CANVAS, WEB AUDIO, CONSTELLATION, CAPSULES)       -->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* -------------------------------------------------------------------
+       * 1. DATA: CONSTELLATION STARS & "OPEN WHEN..." CAPSULES
+       * ------------------------------------------------------------------- */
+      const constellationStars = [
+        {
+          id: 0,
+          x: 50,
+          y: 33,
+          roman: 'I',
+          label: 'Your Warmth',
+          title: 'The Effortless Warmth of Your Heart',
+          message:
+            'You have a rare, unforced kindness that makes people feel safe the moment they talk to you. You never have to try to be magnetic—your sincerity does all the work.'
+        },
+        {
+          id: 1,
+          x: 28,
+          y: 22,
+          roman: 'II',
+          label: 'Your Laugh',
+          title: 'The Way You Light Up Ordinary Days',
+          message:
+            'A single conversation with you can turn a heavy, exhausting day into something peaceful. Your laugh and your energy carry across miles without losing a spark.'
+        },
+        {
+          id: 2,
+          x: 16,
+          y: 44,
+          roman: 'III',
+          label: 'Your Grace',
+          title: 'Your Quiet Strength & Grace',
+          message:
+            'Even when life throws pressure your way, you carry yourself with poise and softness. Watching how thoughtfully you move through the world is genuinely inspiring.'
+        },
+        {
+          id: 3,
+          x: 50,
+          y: 80,
+          roman: 'IV',
+          label: 'Our Ease',
+          title: 'How Natural Everything Feels With You',
+          message:
+            'With you, there is never any pretending or second-guessing. Talking to you feels like breathing fresh air—easy, real, and something I always look forward to.'
+        },
+        {
+          id: 4,
+          x: 84,
+          y: 44,
+          roman: 'V',
+          label: 'Your Soul',
+          title: 'A Beauty That Goes Far Deeper Than Eyes Can See',
+          message:
+            'You are stunning on the outside, Kim, effortlessly so—but it’s the beauty of your character, your loyalty, and your heart that makes you truly unforgettable.'
+        },
+        {
+          id: 5,
+          x: 72,
+          y: 22,
+          roman: 'VI',
+          label: 'Today & Always',
+          title: 'Everything You Deserve This Year',
+          message:
+            'If I could bottle up every good thing in the universe and hand it to you today, it still wouldn’t match how much happiness you deserve.'
+        }
+      ];
+
+      // Heart-loop connections connecting the 6 stars
+      const starConnections = [
+        [0, 1],
+        [1, 2],
+        [2, 3],
+        [3, 4],
+        [4, 5],
+        [5, 0]
+      ];
+
+      const openWhenCapsules = [
+        {
+          tag: 'Capsule 01 • Midnight',
+          title: 'Open at midnight on your birthday',
+          preview: 'For the very first quiet moments of your new year…',
+          body:
+            'Happy Birthday, baby Kim. As the clock turns and your new year officially begins, I want you to know that out of everyone in the world, you are the person I’m most grateful to celebrate today. Take a deep breath, this year is going to treat you with the kindness you deserve.'
+        },
+        {
+          tag: 'Capsule 02 • Distance',
+          title: 'Open when you miss me',
+          preview: 'Whenever miles or busy hours get in the way…',
+          body:
+            'Whenever you miss me, close your eyes for five seconds and remember you’re never far from my thoughts. Distance only measures space, it has zero power over how deeply I care about you or how fast my mood lifts whenever your name pops up on my screen.'
+        },
+        {
+          tag: 'Capsule 03 • Joy',
+          title: 'Open when you need a smile',
+          preview: 'A quick reminder of what you do to my mood every day…',
+          body:
+            'If you’re reading this without smiling yet, consider this your official reminder: you are gorgeous, ridiculously easy to adore, and one of the best things that ever crossed my path. Now let me see that smile, Kim.'
+        },
+        {
+          tag: 'Capsule 04 • Comfort',
+          title: 'Open when you’re having a long day',
+          preview: 'For the evenings when the world feels a little heavy…',
+          body:
+            'Put your shoulders down, unclench your jaw, and let today go. You don’t have to carry the whole world tonight. You did enough, you are enough, and I’m always right here in your corner whenever you want to vent, laugh, or just rest.'
+        }
+      ];
+
+      /* -------------------------------------------------------------------
+       * 2. WEB AUDIO API: TENDER MUSIC-BOX BIRTHDAY LULLABY
+       * ------------------------------------------------------------------- */
+      class StarlightMusicBox {
+        constructor() {
+          this.ctx = null;
+          this.isPlaying = false;
+          this.timer = null;
+          this.step = 0;
+
+          // Gentle, dreamy music-box arpeggio + tender birthday motif (frequencies in Hz)
+          this.notes = [
+            { f: 392.00, d: 0.45 }, // G4
+            { f: 392.00, d: 0.35 }, // G4
+            { f: 440.00, d: 0.80 }, // A4
+            { f: 392.00, d: 0.80 }, // G4
+            { f: 523.25, d: 0.80 }, // C5
+            { f: 493.88, d: 1.35 }, // B4
+
+            { f: 392.00, d: 0.45 }, // G4
+            { f: 392.00, d: 0.35 }, // G4
+            { f: 440.00, d: 0.80 }, // A4
+            { f: 392.00, d: 0.80 }, // G4
+            { f: 587.33, d: 0.80 }, // D5
+            { f: 523.25, d: 1.35 }, // C5
+
+            { f: 392.00, d: 0.45 }, // G4
+            { f: 392.00, d: 0.35 }, // G4
+            { f: 783.99, d: 0.80 }, // G5
+            { f: 659.25, d: 0.80 }, // E5
+            { f: 523.25, d: 0.80 }, // C5
+            { f: 493.88, d: 0.80 }, // B4
+            { f: 440.00, d: 1.35 }, // A4
+
+            { f: 698.46, d: 0.45 }, // F5
+            { f: 698.46, d: 0.35 }, // F5
+            { f: 659.25, d: 0.80 }, // E5
+            { f: 523.25, d: 0.80 }, // C5
+            { f: 587.33, d: 0.80 }, // D5
+            { f: 523.25, d: 1.75 }  // C5
+          ];
+        }
+
+        ensureContext() {
+          if (!this.ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) {
+              this.ctx = new AudioCtx();
+            }
+          }
+          if (this.ctx && this.ctx.state === 'suspended') {
+            this.ctx.resume();
+          }
+        }
+
+        playChime(freq, duration = 0.9) {
+          try {
+            this.ensureContext();
+            if (!this.ctx) return;
+
+            const now = this.ctx.currentTime;
+
+            // Main bell/celesta sine tone
+            const osc1 = this.ctx.createOscillator();
+            const osc2 = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+
+            osc1.type = 'sine';
+            osc1.frequency.setValueAtTime(freq, now);
+
+            // Soft octave harmonic shimmer
+            osc2.type = 'triangle';
+            osc2.frequency.setValueAtTime(freq * 2, now);
+
+            const subGain = this.ctx.createGain();
+            subGain.gain.setValueAtTime(0.018, now);
+            subGain.gain.exponentialRampToValueAtTime(0.0001, now + duration * 0.7);
+
+            gain.gain.setValueAtTime(0.0001, now);
+            gain.gain.linearRampToValueAtTime(0.065, now + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + duration * 1.45);
+
+            osc1.connect(gain);
+            osc2.connect(subGain);
+            subGain.connect(gain);
+            gain.connect(this.ctx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + duration * 1.5);
+            osc2.stop(now + duration * 1.5);
+          } catch (e) {
+            // Fail silently if audio blocked
+          }
+        }
+
+        start() {
+          if (this.isPlaying) return;
+          this.ensureContext();
+          this.isPlaying = true;
+          this.updateUI();
+          this.scheduleNext();
+        }
+
+        stop() {
+          this.isPlaying = false;
+          if (this.timer) {
+            clearTimeout(this.timer);
+            this.timer = null;
+          }
+          this.updateUI();
+        }
+
+        toggle() {
+          if (this.isPlaying) {
+            this.stop();
+          } else {
+            this.start();
+          }
+        }
+
+        scheduleNext() {
+          if (!this.isPlaying) return;
+          const note = this.notes[this.step % this.notes.length];
+          this.playChime(note.f, note.d);
+          this.step++;
+          this.timer = setTimeout(() => this.scheduleNext(), note.d * 680);
+        }
+
+        updateUI() {
+          const label = document.getElementById('musicLabel');
+          const icon = document.getElementById('musicIcon');
+          if (label && icon) {
+            label.textContent = this.isPlaying ? 'Music: Playing' : 'Music: Off';
+            icon.textContent = this.isPlaying ? '♫' : '♪';
+          }
+        }
+      }
+
+      const musicBox = new StarlightMusicBox();
+
+      /* -------------------------------------------------------------------
+       * 3. AMBIENT CANVAS: STARDUST, SHOOTING STARS, LANTERNS & HEARTS
+       * ------------------------------------------------------------------- */
+      const canvas = document.getElementById('cosmosCanvas');
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let pointer = { x: -9999, y: -9999 };
+
+      const stardust = [];
+      const shootingStars = [];
+      const floatingLanterns = [];
+      const burstParticles = [];
+
+      function resizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function initStardust() {
+        stardust.length = 0;
+        const count = Math.min(115, Math.floor((width * height) / 11500));
+        for (let i = 0; i < count; i++) {
+          stardust.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            r: Math.random() * 1.8 + 0.5,
+            vx: (Math.random() - 0.5) * 0.16,
+            vy: -Math.random() * 0.22 - 0.05,
+            alpha: Math.random() * 0.7 + 0.2,
+            phase: Math.random() * Math.PI * 2,
+            isGold: Math.random() > 0.35
+          });
+        }
+      }
+
+      function spawnShootingStar() {
+        shootingStars.push({
+          x: Math.random() * width * 0.85,
+          y: Math.random() * height * 0.35,
+          len: Math.random() * 90 + 70,
+          speed: Math.random() * 7 + 7,
+          angle: Math.PI / 5 + (Math.random() - 0.5) * 0.15,
+          alpha: 1
+        });
+      }
+
+      function spawnBurst(x, y, count = 28) {
+        const palette = ['#f5d08a', '#e8b4a2', '#fdf8f5', '#ff9ebb'];
+        for (let i = 0; i < count; i++) {
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.4;
+          const speed = Math.random() * 4.2 + 1.4;
+          burstParticles.push({
+            x,
+            y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 0.8,
+            size: Math.random() * 3.5 + 1.5,
+            color: palette[Math.floor(Math.random() * palette.length)],
+            alpha: 1,
+            decay: Math.random() * 0.016 + 0.012,
+            isHeart: Math.random() > 0.65
+          });
+        }
+      }
+
+      function launchLanterns(count = 14) {
+        for (let i = 0; i < count; i++) {
+          floatingLanterns.push({
+            x: Math.random() * width,
+            y: height + Math.random() * 160 + 20,
+            vy: -(Math.random() * 0.85 + 0.55),
+            swayPhase: Math.random() * Math.PI * 2,
+            swaySpeed: Math.random() * 0.02 + 0.01,
+            size: Math.random() * 10 + 12,
+            alpha: 0.92,
+            isHeart: Math.random() > 0.55
+          });
+        }
+      }
+
+      function drawHeartShape(x, y, size, color, alpha) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.globalAlpha = Math.max(0, alpha);
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        const topCurveHeight = size * 0.3;
+        ctx.moveTo(0, topCurveHeight);
+        ctx.bezierCurveTo(0, 0, -size / 2, 0, -size / 2, topCurveHeight);
+        ctx.bezierCurveTo(-size / 2, (size + topCurveHeight) / 2, 0, (size + topCurveHeight) / 1.3, 0, size);
+        ctx.bezierCurveTo(0, (size + topCurveHeight) / 1.3, size / 2, (size + topCurveHeight) / 2, size / 2, topCurveHeight);
+        ctx.bezierCurveTo(size / 2, 0, 0, 0, 0, topCurveHeight);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function animateCosmos() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Occasional shooting star
+        if (Math.random() < 0.0045 && shootingStars.length < 2) {
+          spawnShootingStar();
+        }
+
+        // 1. Stardust
+        for (let i = 0; i < stardust.length; i++) {
+          const p = stardust[i];
+          p.phase += 0.025;
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Subtle gentle repulsion/parallax near pointer
+          const dx = p.x - pointer.x;
+          const dy = p.y - pointer.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 110 && dist > 0.1) {
+            p.x += (dx / dist) * 0.35;
+            p.y += (dy / dist) * 0.35;
+          }
+
+          if (p.y < -10) {
+            p.y = height + 10;
+            p.x = Math.random() * width;
+          }
+          if (p.x < -10) p.x = width + 10;
+          if (p.x > width + 10) p.x = -10;
+
+          const twinkle = p.alpha * (0.65 + 0.35 * Math.sin(p.phase));
+          ctx.save();
+          ctx.globalAlpha = twinkle;
+          ctx.fillStyle = p.isGold ? '#f5d08a' : '#fdf8f5';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+
+        // 2. Shooting Stars
+        for (let i = shootingStars.length - 1; i >= 0; i--) {
+          const s = shootingStars[i];
+          s.x += Math.cos(s.angle) * s.speed;
+          s.y += Math.sin(s.angle) * s.speed;
+          s.alpha -= 0.016;
+
+          if (s.alpha <= 0) {
+            shootingStars.splice(i, 1);
+            continue;
+          }
+
+          const tailX = s.x - Math.cos(s.angle) * s.len;
+          const tailY = s.y - Math.sin(s.angle) * s.len;
+          const grad = ctx.createLinearGradient(s.x, s.y, tailX, tailY);
+          grad.addColorStop(0, `rgba(253, 248, 245, ${s.alpha})`);
+          grad.addColorStop(0.4, `rgba(245, 208, 138, ${s.alpha * 0.6})`);
+          grad.addColorStop(1, 'rgba(245, 208, 138, 0)');
+
+          ctx.save();
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 1.6;
+          ctx.beginPath();
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(tailX, tailY);
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // 3. Rising Sky Lanterns & Hearts
+        for (let i = floatingLanterns.length - 1; i >= 0; i--) {
+          const l = floatingLanterns[i];
+          l.swayPhase += l.swaySpeed;
+          l.x += Math.sin(l.swayPhase) * 0.65;
+          l.y += l.vy;
+
+          if (l.y < height * 0.18) {
+            l.alpha -= 0.008;
+          }
+
+          if (l.y < -40 || l.alpha <= 0) {
+            floatingLanterns.splice(i, 1);
+            continue;
+          }
+
+          if (l.isHeart) {
+            drawHeartShape(l.x, l.y, l.size * 1.15, '#e8b4a2', l.alpha * 0.85);
+          } else {
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, l.alpha);
+            const glow = ctx.createRadialGradient(l.x, l.y, 1, l.x, l.y, l.size * 1.6);
+            glow.addColorStop(0, 'rgba(255, 242, 204, 0.95)');
+            glow.addColorStop(0.45, 'rgba(245, 185, 113, 0.55)');
+            glow.addColorStop(1, 'rgba(232, 180, 162, 0)');
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(l.x, l.y, l.size * 1.6, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Lantern core
+            ctx.fillStyle = '#ffdf9e';
+            ctx.beginPath();
+            ctx.roundRect(l.x - l.size * 0.42, l.y - l.size * 0.55, l.size * 0.84, l.size * 1.1, 4);
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        // 4. Interactive Burst Sparkles
+        for (let i = burstParticles.length - 1; i >= 0; i--) {
+          const b = burstParticles[i];
+          b.x += b.vx;
+          b.y += b.vy;
+          b.vy += 0.04; // subtle gravity
+          b.alpha -= b.decay;
+
+          if (b.alpha <= 0) {
+            burstParticles.splice(i, 1);
+            continue;
+          }
+
+          if (b.isHeart) {
+            drawHeartShape(b.x, b.y, b.size * 2.4, b.color, b.alpha);
+          } else {
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, b.alpha);
+            ctx.fillStyle = b.color;
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        requestAnimationFrame(animateCosmos);
+      }
+
+      /* -------------------------------------------------------------------
+       * 4. PORTAL OPENING & SCROLL REVEAL
+       * ------------------------------------------------------------------- */
+      const portalGate = document.getElementById('portalGate');
+      const mainExperience = document.getElementById('mainExperience');
+      const topBar = document.getElementById('topBar');
+
+      function openBirthdayUniverse(event) {
+        const rect = event?.currentTarget?.getBoundingClientRect?.();
+        const cx = rect ? rect.left + rect.width / 2 : width / 2;
+        const cy = rect ? rect.top + rect.height / 2 : height / 2;
+
+        spawnBurst(cx, cy, 42);
+        launchLanterns(10);
+        musicBox.start();
+
+        portalGate.classList.add('opacity-0', 'pointer-events-none', 'scale-105');
+        mainExperience.classList.remove('opacity-0');
+        topBar.classList.remove('opacity-0', 'pointer-events-none');
+
+        setTimeout(() => {
+          portalGate.style.display = 'none';
+        }, 950);
+      }
+
+      document.getElementById('openUniverseBtn').addEventListener('click', openBirthdayUniverse);
+      document.getElementById('openUniverseTextBtn').addEventListener('click', openBirthdayUniverse);
+      document.getElementById('musicToggleBtn').addEventListener('click', () => musicBox.toggle());
+
+      document.getElementById('replayPortalBtn').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        portalGate.style.display = 'flex';
+        requestAnimationFrame(() => {
+          portalGate.classList.remove('opacity-0', 'pointer-events-none', 'scale-105');
+        });
+      });
+
+      // Intersection Observer for smooth scroll reveals
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+      document.querySelectorAll('.reveal-section').forEach((sec) => observer.observe(sec));
+
+      /* -------------------------------------------------------------------
+       * 5. CHAPTER I: CONSTELLATION INTERACTION
+       * ------------------------------------------------------------------- */
+      const litStars = new Set();
+      let activeStarId = null;
+
+      const nodesContainer = document.getElementById('constellationNodes');
+      const linesSvg = document.getElementById('constellationLines');
+      const progressLabel = document.getElementById('constellationProgress');
+      const secretBanner = document.getElementById('constellationSecretBanner');
+
+      function renderConstellation() {
+        // Render SVG connection lines
+        linesSvg.innerHTML = '';
+        starConnections.forEach(([aIdx, bIdx]) => {
+          const a = constellationStars[aIdx];
+          const b = constellationStars[bIdx];
+          const bothLit = litStars.has(aIdx) && litStars.has(bIdx);
+          const oneLit = litStars.has(aIdx) || litStars.has(bIdx);
+
+          const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          line.setAttribute('x1', a.x);
+          line.setAttribute('y1', a.y);
+          line.setAttribute('x2', b.x);
+          line.setAttribute('y2', b.y);
+          line.setAttribute('stroke', bothLit ? '#f5d08a' : oneLit ? 'rgba(232,180,162,0.35)' : 'rgba(255,255,255,0.1)');
+          line.setAttribute('stroke-width', bothLit ? '0.65' : '0.35');
+          if (!bothLit) {
+            line.setAttribute('stroke-dasharray', '1.5 1.5');
+          }
+          linesSvg.appendChild(line);
+        });
+
+        // Render interactive star buttons
+        nodesContainer.innerHTML = '';
+        constellationStars.forEach((star) => {
+          const isLit = litStars.has(star.id);
+          const isActive = activeStarId === star.id;
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.style.left = `${star.x}%`;
+          btn.style.top = `${star.y}%`;
+          btn.ariaLabel = `Star ${star.roman}: ${star.label}`;
+          btn.className =
+            'absolute -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none cursor-pointer p-2';
+
+          const dot = document.createElement('span');
+          dot.className = `relative w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-all duration-300 flex items-center justify-center ${
+            isLit
+              ? 'bg-gold shadow-[0_0_18px_#f5d08a] scale-110'
+              : 'bg-champagne/40 hover:bg-rosegold star-halo'
+          } ${isActive ? 'ring-4 ring-rosegold/45 scale-125' : ''}`;
+
+          const lbl = document.createElement('span');
+          lbl.textContent = star.label;
+          lbl.className = `mt-1.5 px-2 py-0.5 rounded-full text-[10px] sm:text-xs tracking-wide whitespace-nowrap transition ${
+            isLit
+              ? 'bg-midnight/85 text-gold border border-gold/30'
+              : 'text-champagne/60 group-hover:text-champagne'
+          }`;
+
+          btn.appendChild(dot);
+          btn.appendChild(lbl);
+
+          btn.addEventListener('click', (e) => {
+            litStars.add(star.id);
+            activeStarId = star.id;
+            const r = btn.getBoundingClientRect();
+            spawnBurst(r.left + r.width / 2, r.top + r.height / 2, 16);
+            musicBox.playChime(523.25 + star.id * 55, 0.55);
+            updateStarCard(star);
+            renderConstellation();
+          });
+
+          nodesContainer.appendChild(btn);
+        });
+
+        progressLabel.textContent = `${litStars.size} of ${constellationStars.length} Stars Lit`;
+        if (litStars.size === constellationStars.length) {
+          secretBanner.classList.remove('hidden');
+        }
+      }
+
+      function updateStarCard(star) {
+        document.getElementById('starBadge').textContent = `Star ${star.roman} • ${star.label}`;
+        document.getElementById('starRoman').textContent = star.roman;
+        document.getElementById('starTitle').textContent = star.title;
+        document.getElementById('starMessage').textContent = star.message;
+        document.getElementById('starHint').textContent =
+          litStars.size === constellationStars.length
+            ? 'All stars illuminated ♥'
+            : `${constellationStars.length - litStars.size} star(s) left to discover`;
+      }
+
+      document.getElementById('lightAllStarsBtn').addEventListener('click', (e) => {
+        constellationStars.forEach((s) => litStars.add(s.id));
+        activeStarId = 5;
+        updateStarCard(constellationStars[5]);
+        renderConstellation();
+        const r = e.currentTarget.getBoundingClientRect();
+        spawnBurst(r.left + r.width / 2, r.top + r.height / 2, 32);
+        launchLanterns(8);
+      });
+
+      renderConstellation();
+
+      /* -------------------------------------------------------------------
+       * 6. CHAPTER II: WAX SEAL LETTER REVEAL
+       * ------------------------------------------------------------------- */
+      const letterClosedState = document.getElementById('letterClosedState');
+      const letterOpenState = document.getElementById('letterOpenState');
+
+      function animateLetterLines() {
+        const lines = document.querySelectorAll('#letterBody .letter-line');
+        lines.forEach((line) => line.classList.remove('shown'));
+        lines.forEach((line, idx) => {
+          setTimeout(() => {
+            line.classList.add('shown');
+          }, 220 + idx * 420);
+        });
+      }
+
+      document.getElementById('breakLetterSealBtn').addEventListener('click', (e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        spawnBurst(r.left + r.width / 2, r.top + r.height / 2, 34);
+        musicBox.playChime(659.25, 0.9);
+
+        letterClosedState.classList.add('hidden');
+        letterOpenState.classList.remove('hidden');
+        animateLetterLines();
+      });
+
+      document.getElementById('reReadLetterBtn').addEventListener('click', () => {
+        animateLetterLines();
+      });
+
+      /* -------------------------------------------------------------------
+       * 7. CHAPTER III: INTERACTIVE BIRTHDAY CAKE & CANDLE BLOW-OUT
+       * ------------------------------------------------------------------- */
+      const flames = document.querySelectorAll('.candle-flame');
+      const smokes = document.querySelectorAll('.candle-smoke');
+      const cakeActionArea = document.getElementById('cakeActionArea');
+      const wishBlessingBox = document.getElementById('wishBlessingBox');
+      const wishSubtitle = document.getElementById('wishSubtitle');
+      const cakeAmbientGlow = document.getElementById('cakeAmbientGlow');
+
+      document.getElementById('blowCandlesBtn').addEventListener('click', (e) => {
+        flames.forEach((f) => f.classList.add('extinguished'));
+        smokes.forEach((s) => {
+          s.classList.remove('rising');
+          void s.offsetWidth; // trigger reflow
+          s.classList.add('rising');
+        });
+
+        cakeAmbientGlow.classList.add('opacity-20');
+        cakeActionArea.classList.add('hidden');
+        wishBlessingBox.classList.remove('hidden');
+        wishSubtitle.textContent = 'Your wish has been sent up into the stars.';
+
+        const r = e.currentTarget.getBoundingClientRect();
+        spawnBurst(r.left + r.width / 2, r.top - 40, 48);
+        launchLanterns(22);
+
+        // Gentle celebratory chord
+        musicBox.playChime(523.25, 1.1);
+        setTimeout(() => musicBox.playChime(659.25, 1.1), 140);
+        setTimeout(() => musicBox.playChime(783.99, 1.4), 280);
+      });
+
+      document.getElementById('relightCandlesBtn').addEventListener('click', () => {
+        flames.forEach((f) => f.classList.remove('extinguished'));
+        smokes.forEach((s) => s.classList.remove('rising'));
+        cakeAmbientGlow.classList.remove('opacity-20');
+        wishBlessingBox.classList.add('hidden');
+        cakeActionArea.classList.remove('hidden');
+        wishSubtitle.textContent =
+          'Think of the one wish closest to your heart this year—then tap the button below to blow out your candles.';
+      });
+
+      /* -------------------------------------------------------------------
+       * 8. CHAPTER IV: "OPEN WHEN..." CAPSULES & MODAL
+       * ------------------------------------------------------------------- */
+      const capsulesGrid = document.getElementById('capsulesGrid');
+      const capsuleModal = document.getElementById('capsuleModal');
+
+      openWhenCapsules.forEach((cap, index) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className =
+          'glass-luxury glass-card-hover rounded-3xl p-6 sm:p-8 text-left flex flex-col justify-between cursor-pointer group focus:outline-none';
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] uppercase tracking-[0.22em] text-gold/80">${cap.tag}</span>
+              <span class="w-8 h-8 rounded-full bg-crimson/80 border border-gold/40 flex items-center justify-center text-xs text-gold group-hover:scale-110 transition">
+                ♥
+              </span>
+            </div>
+            <h3 class="font-serif italic text-2xl sm:text-3xl text-champagne group-hover:text-gold transition mb-2">
+              ${cap.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-champagne/65 font-light leading-relaxed">
+              ${cap.preview}
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-rosegold">
+            <span>Tap to Unseal</span>
+            <span>→</span>
+          </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+          document.getElementById('modalCapsuleTag').textContent = cap.tag;
+          document.getElementById('modalCapsuleTitle').textContent = cap.title;
+          document.getElementById('modalCapsuleBody').textContent = cap.body;
+
+          capsuleModal.classList.remove('hidden');
+          capsuleModal.classList.add('flex');
+
+          const r = card.getBoundingClientRect();
+          spawnBurst(r.left + r.width / 2, r.top + r.height / 2, 20);
+          musicBox.playChime(587.33 + index * 45, 0.65);
+        });
+
+        capsulesGrid.appendChild(card);
+      });
+
+      function closeCapsuleModal() {
+        capsuleModal.classList.add('hidden');
+        capsuleModal.classList.remove('flex');
+      }
+
+      document.getElementById('closeCapsuleModalBtn').addEventListener('click', closeCapsuleModal);
+      capsuleModal.addEventListener('click', (e) => {
+        if (e.target === capsuleModal) closeCapsuleModal();
+      });
+
+      /* -------------------------------------------------------------------
+       * 9. FOOTER LANTERN BURST & POINTER LISTENERS
+       * ------------------------------------------------------------------- */
+      document.getElementById('sendLanternBurstBtn').addEventListener('click', (e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        spawnBurst(r.left + r.width / 2, r.top, 36);
+        launchLanterns(18);
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        pointer.x = e.clientX;
+        pointer.y = e.clientY;
+      });
+
+      window.addEventListener(
+        'touchmove',
+        (e) => {
+          if (e.touches && e.touches[0]) {
+            pointer.x = e.touches[0].clientX;
+            pointer.y = e.touches[0].clientY;
+          }
+        },
+        { passive: true }
+      );
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        initStardust();
+      });
+
+      window.onload = function () {
+        resizeCanvas();
+        initStardust();
+        animateCosmos();
+      };
+    })();
+  </script>
+</body>
+</html>
